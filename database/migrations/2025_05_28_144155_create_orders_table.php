@@ -6,21 +6,19 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
 
     public function up(): void
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id)->constrained();
+            $table->foreignId('user_id')->constrained();
             $table->string('name');
             $table->string('email');
             $table->text('address');
             $table->decimal('total_price', 8, 2);
             $table->timestamps();
         });
-    }*/
+    }
 
     /**
      * Reverse the migrations.
