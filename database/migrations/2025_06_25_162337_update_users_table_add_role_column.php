@@ -21,7 +21,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedBigInteger('role_id')->nullable();
+            //$table->unsignedBigInteger('role_id')->nullable();
             $table->dropColumn('role');
         });
     }
