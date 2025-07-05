@@ -59,9 +59,7 @@ class ProfileController extends Controller
         }
 
         $path = $request->file('avatar')->store('avatars', 'public');
-        $relativePath = str_replace('public/', '', $path);
-
-        $request->user()->update(['avatar' => $relativePath]);
+        $request->user()->update(['avatar' => $path]);
 
         return back()->with('status', 'avatar-updated')
                      ->with('message', 'Avatar updated successfully!');

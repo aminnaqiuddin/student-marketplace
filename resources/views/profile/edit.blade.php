@@ -28,6 +28,11 @@
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                         @enderror
                     </form>
+                    <script>
+                        document.getElementById('avatar').addEventListener('change', function () {
+                            document.getElementById('avatar-form').submit();
+                        });
+                    </script>
                     <p class="text-sm text-gray-500 mt-1">JPG, PNG up to 5MB</p>
                 </div>
             </div>
