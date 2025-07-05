@@ -9,12 +9,14 @@ use Illuminate\Support\Facades\Log;
 use Stripe\Stripe;
 use Stripe\Checkout\Session;
 use Stripe\PaymentIntent;
+use Stripe\Webhook;
+use Stripe\Exception\SignatureVerificationException;
 
 class StripeController extends Controller
 {
     public function checkout(Request $request)
     {
-        Stripe::setApiKey(env('STRIPE_SECRET'));
+        Stripe::setApiKey(config('services.stripe.secret'));
 
         $lineItems = $this->buildLineItemsFromCart();
 
@@ -83,13 +85,12 @@ class StripeController extends Controller
         $sessionId = $request->get('session_id');
 
         try {
-            Stripe::setApiKey(env('STRIPE_SECRET'));
+            Stripe::setApiKey(config('services.stripe.secret'));
             $session = Session::retrieve($sessionId);
 
             $order = Order::where('stripe_session_id', $session->id)->first();
 
             if ($order) {
-                // Double-check payment status
                 if ($session->payment_status === 'paid') {
                     $order->update(['status' => 'paid']);
                     session()->forget('cart');
@@ -110,11 +111,11 @@ class StripeController extends Controller
 
     public function handleWebhook(Request $request)
     {
-        Stripe::setApiKey(env('STRIPE_SECRET'));
+        Stripe::setApiKey(config('services.stripe.secret'));
 
         $payload = $request->getContent();
         $sigHeader = $request->header('Stripe-Signature');
-        $endpointSecret = env('STRIPE_WEBHOOK_SECRET');
+        $endpointSecret = config('services.stripe.webhook_secret');
 
         try {
             $event = Webhook::constructEvent($payload, $sigHeader, $endpointSecret);
@@ -153,7 +154,6 @@ class StripeController extends Controller
                 'stripe_payment_intent' => $session->payment_intent
             ]);
 
-            // Add any order fulfillment logic here
             Log::info("Order #{$order->id} fulfilled via webhook");
         }
     }

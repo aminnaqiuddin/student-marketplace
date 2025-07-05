@@ -114,7 +114,12 @@ class CheckoutController extends Controller
             return redirect($session->url);
 
         } catch (ApiErrorException $e) {
-            Log::error('Stripe error: ' . $e->getMessage());
+            Log::error('Stripe session creation error', [
+                'message' => $e->getMessage(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+                'cart' => $cart,
+            ]);
             return back()->with('error', 'Payment processing error. Please try again.');
         }
     }
