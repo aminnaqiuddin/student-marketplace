@@ -10,15 +10,21 @@
     @endif
 
     <div class="mt-4 flex items-center justify-between">
-        <form method="POST" action="{{ route('verification.send') }}">
-            @csrf
+        <div class="flex items-center">
+            <form method="POST" action="{{ route('verification.send') }}">
+                @csrf
 
-            <div>
-                <x-primary-button>
-                    {{ __('Resend Verification Email') }}
-                </x-primary-button>
-            </div>
-        </form>
+                <div>
+                    <x-primary-button>
+                        {{ __('Resend Verification Email') }}
+                    </x-primary-button>
+                </div>
+            </form>
+
+            <a href="{{ route('manual.verify') }}" class="underline text-sm text-blue-600 hover:text-blue-900 ml-4">
+                Click Here to Verify
+            </a>
+        </div>
 
         <form method="POST" action="{{ route('logout') }}">
             @csrf
@@ -28,23 +34,4 @@
             </button>
         </form>
     </div>
-    <div class="mt-4 flex items-center justify-between">
-    <form method="POST" action="{{ route('verification.send') }}">
-        @csrf
-        <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900">
-            {{ __('Resend Verification Email') }}
-        </button>
-    </form>
-
-    <a href="{{ route('manual.verify') }}" class="underline text-sm text-blue-600 hover:text-blue-900 ml-4">
-        Click Here to Verify
-    </a>
-
-    <form method="POST" action="{{ route('logout') }}">
-        @csrf
-        <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900">
-            {{ __('Log Out') }}
-        </button>
-    </form>
-</div>
 </x-guest-layout>
