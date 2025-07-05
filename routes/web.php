@@ -66,7 +66,8 @@ Route::controller(ProfileController::class)->group(function () {
         Route::get('/profile/edit', 'edit')->name('profile.edit');
         Route::post('/profile/avatar', 'updateAvatar')->name('profile.avatar');
         Route::patch('/profile/update', 'update')->name('profile.update');
-        Route::put('/password/update', 'updatePassword')->name('password.update');
+        Route::put('/password/update', 'updatePassword')->name('profile.password.update');
+        //Route::put('/password/update', 'updatePassword')->name('password.update');
     });
 
     // Public profile
