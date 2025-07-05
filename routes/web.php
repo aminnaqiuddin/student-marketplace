@@ -9,6 +9,7 @@ use App\Http\Controllers\{
 use Chatify\Http\Controllers\MessagesController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ProductReportController;
+use Illuminate\Http\Request;
 
 // ==================== Stripe Webhook ====================
 Route::post('/stripe/webhook', [StripeWebhookController::class, 'handleWebhook'])
@@ -106,6 +107,13 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/products/{product}/report', [ProductReportController::class, 'create'])->name('report.product.form');
     Route::post('/report/product', [ProductReportController::class, 'store'])->name('report.product');
 });
+
+Route::get('/manual-verify', function (Request $request) {
+    if ($request->user() && !$request->user()->hasVerifiedEmail()) {
+        $request->user()->markEmailAsVerified();
+    }
+    return redirect('/products');
+})->middleware('auth')->name('manual.verify');
 
 // ==================== Logout ====================
 Route::middleware('auth')->post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
