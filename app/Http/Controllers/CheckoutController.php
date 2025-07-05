@@ -97,7 +97,7 @@ class CheckoutController extends Controller
         $successUrl = url("/checkout/success/{$order->id}/__SESSION_ID__");
 
         try {
-            Stripe::setApiKey(env('STRIPE_SECRET'));
+            Stripe::setApiKey(config('services.stripe.secret'));
 
             $session = StripeSession::create([
                 'payment_method_types' => ['card'],
@@ -127,7 +127,7 @@ class CheckoutController extends Controller
     public function paymentSuccess($orderId, $sessionId)
     {
         try {
-            Stripe::setApiKey(env('STRIPE_SECRET'));
+            Stripe::setApiKey(config('services.stripe.secret'));
 
             $session = StripeSession::retrieve($sessionId);
             $order = Order::findOrFail($orderId);
