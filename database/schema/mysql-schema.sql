@@ -189,6 +189,7 @@ CREATE TABLE `products` (
   `price` decimal(8,2) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `status` varchar(255) NOT NULL DEFAULT 'active',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -304,3 +305,4 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (23,'2017_11_26_015
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (24,'2018_03_11_000000_add_user_settings',2);
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (25,'2018_03_14_000000_add_details_to_data_types_table',2);
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (26,'2018_03_16_000000_make_settings_value_nullable',2);
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES (27,'2025_07_05_144220_add_status_to_products_table_temp',3);
