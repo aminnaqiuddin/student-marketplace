@@ -115,6 +115,17 @@ Route::get('/manual-verify', function (Request $request) {
     return redirect('/products');
 })->middleware('auth')->name('manual.verify');
 
+Route::get('/stripe-test', function () {
+    \Stripe\Stripe::setApiKey(config('services.stripe.secret'));
+
+    try {
+        $balance = \Stripe\Balance::retrieve();
+        return $balance;
+    } catch (\Exception $e) {
+        return $e->getMessage();
+    }
+});
+
 // ==================== Logout ====================
 Route::middleware('auth')->post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 
