@@ -99,18 +99,18 @@
                 <div class="min-h-[260px]">
                     <h5 class="font-bold text-lg mb-3">Categories</h5>
                     <ul class="space-y-2 text-sm">
-                        <li><span class="text-gray-700">Mens' Fashion</span></li>
-                        <li><span class="text-gray-700">Women's Fashion</span></li>
-                        <li><span class="text-gray-700">Books & Stationery</span></li>
-                        <li><span class="text-gray-700">Laptops & Accessories</span></li>
-                        <li><span class="text-gray-700">Mobile Phones & Gadgets</span></li>
-                        <li><span class="text-gray-700">Sports & Outdoors</span></li>
-                        <li><span class="text-gray-700">Services</span></li>
-                        <li><span class="text-gray-700">Video Games & Consoles</span></li>
-                        <li><span class="text-gray-700">Audio Equipment</span></li>
-                        <li><span class="text-gray-700">Photography</span></li>
-                        <li><span class="text-gray-700">Food & Beverages</span></li>
-                        <li><span class="text-gray-700">Event Tickets</span></li>
+                        <li><span class="hover:text-uitm-gold cursor-pointer">Mens' Fashion</span></li>
+                        <li><span class="hover:text-uitm-gold cursor-pointer">Women's Fashion</span></li>
+                        <li><span class="hover:text-uitm-gold cursor-pointer">Books & Stationery</span></li>
+                        <li><span class="hover:text-uitm-gold cursor-pointer">Laptops & Accessories</span></li>
+                        <li><span class="hover:text-uitm-gold cursor-pointer">Mobile Phones & Gadgets</span></li>
+                        <li><span class="hover:text-uitm-gold cursor-pointer">Sports & Outdoors</span></li>
+                        <li><span class="hover:text-uitm-gold cursor-pointer">Services</span></li>
+                        <li><span class="hover:text-uitm-gold cursor-pointer">Video Games & Consoles</span></li>
+                        <li><span class="hover:text-uitm-gold cursor-pointer">Audio Equipment</span></li>
+                        <li><span class="hover:text-uitm-gold cursor-pointer">Photography</span></li>
+                        <li><span class="hover:text-uitm-gold cursor-pointer">Food & Beverages</span></li>
+                        <li><span class="hover:text-uitm-gold cursor-pointer">Event Tickets</span></li>
                     </ul>
                 </div>
 
