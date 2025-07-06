@@ -149,7 +149,7 @@
             </div>
 
             <div class="mt-12 border-t border-uitm-gold pt-6 text-sm text-center text-gray-300">
-                &copy; {{ date('Y') }} <span class="text-white font-semibold">UniTrade</span>. All rights reserved.
+                &copy; {{ date('Y') }} <span class="text-white font-semibold">SiswaMart</span>. All rights reserved.
             </div>
         </div>
     </footer>

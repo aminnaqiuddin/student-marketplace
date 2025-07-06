@@ -56,8 +56,9 @@
                 </div>
 
                 <div>
-                    <label for="address" class="block font-medium">Address</label>
+                    <label for="address" class="block font-medium">Preferred Meetup Location</label>
                     <textarea name="address" id="address" required
+                        placeholder="e.g. Kolej Cengal 1, Anjung Siswa, Library entrance"
                         class="w-full border rounded px-3 py-2 @error('address') border-red-500 @enderror">{{ old('address') }}</textarea>
                 </div>
 

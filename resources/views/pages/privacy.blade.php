@@ -5,13 +5,13 @@
     <h2 class="text-4xl font-bold text-uitm-purple mb-6">Privacy Policy</h2>
 
     <p class="text-lg text-gray-700 mb-6 leading-relaxed">
-        At UniTrade, we value your privacy and are committed to protecting your personal data. This Privacy Policy outlines how we collect, use, store, and safeguard your information when you use our platform.
+        At SiswaMart, we value your privacy and are committed to protecting your personal data. This Privacy Policy outlines how we collect, use, store, and safeguard your information when you use our platform.
     </p>
 
     <!-- Section 1 -->
     <h2 class="text-2xl font-semibold text-gray-800 mt-8 mb-2">1. Information We Collect</h2>
     <ul class="list-disc list-inside text-gray-700 mb-4">
-        <li>Your name, email address, and student ID (for verification)</li>
+        <li>Your name and email address</li>
         <li>Profile details including avatar, bio, and join date</li>
         <li>Product listings, transaction history, and chat activity</li>
         <li>Technical data like IP address, browser type, and device info</li>

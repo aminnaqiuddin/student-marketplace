@@ -5,7 +5,7 @@
     <h2 class="text-4xl font-bold text-uitm-purple mb-6">Terms & Conditions</h2>
 
     <p class="text-gray-700 text-lg leading-relaxed mb-6">
-        These Terms & Conditions govern your use of UniTrade. By accessing or using the platform, you agree to comply with the following terms. Please review them carefully.
+        These Terms & Conditions govern your use of SiswaMart. By accessing or using the platform, you agree to comply with the following terms. Please review them carefully.
     </p>
 
     <!-- Section 1 -->
@@ -14,7 +14,7 @@
         Only verified students from participating universities are eligible to:
     </p>
     <ul class="list-disc list-inside text-gray-700 mb-4">
-        <li>Create an account on UniMarketplace</li>
+        <li>Create an account on SiswaMart</li>
         <li>List products or services</li>
         <li>Engage in buying or selling activities</li>
     </ul>
@@ -33,7 +33,7 @@
     <!-- Section 3 -->
     <h2 class="text-2xl font-semibold text-gray-800 mt-8 mb-2">3. Transactions</h2>
     <p class="text-gray-700 mb-4">
-        UniMarketplace is a student-to-student platform. We are not responsible for:
+        SiswaMart is a student-to-student platform. We are not responsible for:
     </p>
     <ul class="list-disc list-inside text-gray-700 mb-4">
         <li>Quality or condition of items sold</li>

@@ -2,11 +2,11 @@
 
 @section('content')
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 mb-20">
-    <h2 class="text-4xl font-bold text-uitm-purple mb-8 ">About UniTrade</h2>
+    <h2 class="text-4xl font-bold text-uitm-purple mb-8 ">About SiswaMart</h2>
 
     <div class="space-y-8 text-gray-700 leading-relaxed text-lg">
         <p>
-            <strong>UniMarketplace</strong> is a student-powered platform designed to simplify buying and selling within campus communities.
+            <strong>SiswaMart</strong> is a student-powered platform designed to simplify buying and selling within campus communities.
             Whether you're looking to sell used textbooks, score affordable electronics, or offer services like tutoring or printing —
             this is your one-stop campus marketplace.
         </p>
@@ -17,7 +17,7 @@
         </p>
 
         <div>
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Why Choose UniMarketplace?</h2>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Why Choose SiswaMart?</h2>
             <ul class="list-disc list-inside space-y-2">
                 <li>👩‍🎓 Built by students, for students</li>
                 <li>🔒 Safe and verified university user base</li>
@@ -38,8 +38,8 @@
             <h2 class="text-2xl font-semibold text-gray-800 mb-4">Contact Us</h2>
             <p>
                 Got questions or feedback? We’d love to hear from you! Email us at
-                <a href="mailto:support@unimarketplace.test" class="text-uitm-purple underline hover:text-uitm-purple-dark">
-                    support@unitrade.test
+                <a href="mailto:support@siswamart.shop" class="text-uitm-purple underline hover:text-uitm-purple-dark">
+                    support@siswamart.shop
                 </a>.
             </p>
         </div>

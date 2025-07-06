@@ -38,7 +38,7 @@
         <div class="pt-4">
             <h2 class="text-xl font-semibold text-gray-800">💵 Is there a fee for selling on UniMarketplace?</h2>
             <p class="text-gray-700 mt-2">
-                No. UniTrade is a free platform for students to buy and sell within the campus community.
+                No. SiswaMart is a free platform for students to buy and sell within the campus community.
                 We do not charge listing fees, transaction fees, or commissions.
             </p>
         </div>
@@ -47,7 +47,7 @@
         <div class="pt-4">
             <h2 class="text-xl font-semibold text-gray-800">📦 What happens after someone buys my product?</h2>
             <p class="text-gray-700 mt-2">
-                You will receive an order notification and a chat will be opened between you and the buyer.
+                You will receive an order notification.
                 Arrange for delivery or meet-up, and make sure to mark the product as sold once completed.
             </p>
         </div>

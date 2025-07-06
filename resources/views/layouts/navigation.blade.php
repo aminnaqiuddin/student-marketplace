@@ -10,7 +10,7 @@
             <!-- Logo & Sell Button -->
             <div class="flex items-center space-x-4">
                 <a href="{{ route('products.index') }}" class="text-xl font-bold text-white">
-                    UniTrade
+                    SiswaMart
                 </a>
                 @auth
                     <a href="{{ route('products.create') }}"
