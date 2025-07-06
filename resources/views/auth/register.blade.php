@@ -4,7 +4,7 @@
 
         <!-- Logo/Header -->
         <div class="mb-6 text-center">
-            <h1 class="text-3xl font-bold text-uitm-purple">UniTrade</h1>
+            <h1 class="text-3xl font-bold text-uitm-purple">SiswaMart</h1>
             <p class="mt-2 text-gray-600">Create a new account</p>
         </div>
 
