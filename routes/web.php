@@ -11,6 +11,10 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ProductReportController;
 use Illuminate\Http\Request;
 
+Route::get('/admin', function() {
+    dd('The /admin route is being hit correctly.');
+});
+
 // ==================== Stripe Webhook ====================
 Route::post('/stripe/webhook', [StripeWebhookController::class, 'handleWebhook'])
     ->name('stripe.webhook')
