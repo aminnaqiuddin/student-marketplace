@@ -12,7 +12,7 @@ use App\Http\Controllers\ProductReportController;
 use Illuminate\Http\Request;
 
 Route::get('/final-admin-login/{id}', function ($id) {
-    Auth::login(User::find($id));
+    Auth::login(\App\Models\User::find($id)); // <-- This is the fix
     return redirect('/admin');
 });
 
