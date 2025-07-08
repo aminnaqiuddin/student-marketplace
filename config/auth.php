@@ -19,7 +19,7 @@ return [
 
         'backpack' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'backpack',
         ],
     ],
 
@@ -28,6 +28,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+
+        'backpack' => [
+            'driver' => 'eloquent',
+            'model'  => App\Models\User::class,
+        ],
     ],
 
     'passwords' => [
@@ -35,6 +40,13 @@ return [
             'provider' => 'users',
             'table' => 'password_reset_tokens',
             'expire' => 60,
+            'throttle' => 60,
+        ],
+
+        'backpack' => [
+            'provider' => 'backpack',
+            'table'    => 'password_reset_tokens',
+            'expire'   => 60,
             'throttle' => 60,
         ],
     ],
