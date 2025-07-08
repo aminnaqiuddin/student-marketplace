@@ -3,13 +3,15 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\ProductImageResource\Pages;
+use App\Filament\Resources\ProductImageResource\RelationManagers;
 use App\Models\ProductImage;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class ProductImageResource extends Resource
 {
@@ -27,17 +29,10 @@ class ProductImageResource extends Resource
                     ->required(),
 
                 Forms\Components\FileUpload::make('image_path')
-                    ->label('Product Image')
                     ->image()
                     ->disk('public')
                     ->directory('products')
-                    ->required()
-                    ->preview(function ($state) {
-                        return $state
-                            ? Storage::disk('public')->url($state)
-                            : null;
-                    })
-                    ->disabled(), // Disable since admin doesn't upload
+                    ->required(),
             ]);
     }
 
@@ -51,17 +46,15 @@ class ProductImageResource extends Resource
                     ->sortable(),
 
                 Tables\Columns\ImageColumn::make('image_path')
-                    ->label('Image')
                     ->disk('public'),
 
                 Tables\Columns\TextColumn::make('created_at')
-                    ->label('Uploaded At')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                // You can add filters here if needed
+                //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
@@ -76,7 +69,7 @@ class ProductImageResource extends Resource
     public static function getRelations(): array
     {
         return [
-            // Add any relation managers here
+            //
         ];
     }
 
