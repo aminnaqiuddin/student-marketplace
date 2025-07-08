@@ -11,11 +11,6 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ProductReportController;
 use Illuminate\Http\Request;
 
-Route::get('/final-admin-login/{id}', function ($id) {
-    Auth::login(\App\Models\User::find($id)); // <-- This is the fix
-    return redirect('/admin');
-});
-
 // ==================== Stripe Webhook ====================
 Route::post('/stripe/webhook', [StripeWebhookController::class, 'handleWebhook'])
     ->name('stripe.webhook')
