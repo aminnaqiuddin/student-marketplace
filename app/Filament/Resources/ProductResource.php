@@ -17,13 +17,51 @@ class ProductResource extends Resource
 {
     protected static ?string $model = Product::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-shopping-bag';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                //
+                // This will automatically associate the product with the logged-in admin
+                Forms\Components\Hidden::make('user_id')
+                    ->default(auth()->id()),
+
+                Forms\Components\TextInput::make('title')
+                    ->required()
+                    ->maxLength(255),
+
+                Forms\Components\RichEditor::make('description')
+                    ->required()
+                    ->columnSpanFull(),
+
+                Forms\Components\TextInput::make('price')
+                    ->required()
+                    ->numeric()
+                    ->prefix('RM'),
+
+                Forms\Components\Select::make('category_id')
+                    ->relationship('category', 'name')
+                    ->required(),
+
+                Forms\Components\Select::make('condition')
+                    ->options([
+                        'New' => 'New',
+                        'Like New' => 'Like New',
+                        'Very Good' => 'Very Good',
+                        'Good' => 'Good',
+                        'Fair' => 'Fair',
+                    ])
+                    ->required(),
+
+                Forms\Components\Select::make('status')
+                    ->options([
+                        'active' => 'Active',
+                        'inactive' => 'Inactive',
+                        'sold' => 'Sold',
+                    ])
+                    ->default('active')
+                    ->required(),
             ]);
     }
 
@@ -31,7 +69,28 @@ class ProductResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\ImageColumn::make('images.0.image_path')
+                    ->label('Image')
+                    ->disk('public'),
+                Tables\Columns\TextColumn::make('title')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('user.name')
+                    ->label('Seller')
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('price')
+                    ->money('MYR')
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('status')
+                    ->badge()
+                    ->color(fn (string $state): string => match ($state) {
+                        'active' => 'success',
+                        'inactive' => 'warning',
+                        'sold' => 'danger',
+                    }),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
